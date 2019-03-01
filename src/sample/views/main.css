@@ -30,3 +30,8 @@ Label{
     -fx-font-size: 25px;
     /*-fx-background-color:;*/
 }
+
+.footer{
+    -fx-background-color: #435f71;
+    -fx-font-size: 15px;
+}
