@@ -13,15 +13,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("views/main.fxml"));
+        primaryStage.setTitle("X-main");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
-        //launch(args);
-        String problem = "clavier";
+        launch(args);
+        /*String problem = "clavier";
         String solution = "changer de clavier";
 
         ArrayList<String> symptoms = new ArrayList<>();
@@ -29,6 +29,6 @@ public class Main extends Application {
         symptoms.add("la machine s'allume");
 
         BrainProcessing.save(problem, solution, symptoms);
-        System.exit(0);
+        System.exit(0);*/
     }
 }
