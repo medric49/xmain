@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.controllers.MainController;
 import model.Knowledge;
 
 import java.util.ArrayList;
@@ -14,10 +15,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("views/main.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(sample.Main.class.getResource("views/main.fxml"));
+        Parent root = loader.load();
+        MainController controller = loader.getController();
         primaryStage.setTitle("X-main");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        controller.setStage(primaryStage);
     }
 
     public static void main(String[] args) {

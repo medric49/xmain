@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="818.0" stylesheets="@discussion.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="818.0" stylesheets="@discussion.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.DiscussionController">
    <top>
       <HBox maxHeight="69.0" prefHeight="69.0" prefWidth="818.0" styleClass="header" BorderPane.alignment="CENTER">
          <children>
@@ -163,7 +163,7 @@
             <HBox alignment="CENTER" layoutX="37.0" layoutY="542.0" prefHeight="68.0" prefWidth="200.0" spacing="20.0" styleClass="answer-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <JFXTextField focusColor="#00aae4" prefHeight="25.0" prefWidth="286.0" promptText="Ecrivez votre réponse (oui ou non)" />
-                  <JFXButton styleClass="send" text="Envoyer" />
+                  <JFXButton onAction="#send" styleClass="send" text="Envoyer" />
                </children>
             </HBox>
          </children>
