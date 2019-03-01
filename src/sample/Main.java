@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Knowledge;
 
 import java.util.ArrayList;
 
@@ -28,7 +29,9 @@ public class Main extends Application {
         symptoms.add("la machine s'eteint");
         symptoms.add("la machine s'allume");
 
-        BrainProcessing.save(problem, solution, symptoms);
+        Knowledge knowledge = BrainProcessing.save(problem, solution, symptoms);
+        System.out.println(knowledge.getHypothesisLine());
+        knowledge.delete();
         System.exit(0);
     }
 }
