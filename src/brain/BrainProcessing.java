@@ -88,26 +88,27 @@ public abstract class BrainProcessing {
     }
 
     public static void delete(Knowledge knowledge) {
-        List<Element> rootChildren =  document.getRootElement().getChildren();
+        List<Element> rootChildren =  document.getRootElement().getChildren(KNOWLEDGE_TAG);
 
         for ( int i=0; i< rootChildren.size(); i++ ) {
             Element element = rootChildren.get(i);
 
-            if (element.getAttribute("id").getValue().equals(knowledge.getId())) {
+            if (element.getAttributeValue("id").equals(knowledge.getId())) {
 
                 String hypothesisLine = getNextHypothesisLine();
                 String verificationLine = getNextVerificationLine();
+
                 int nHypothesisLine = Integer.parseInt(hypothesisLine)-1;
                 int nVerificationLine = Integer.parseInt(verificationLine)-2;
 
-                rootChildren.remove(element);
-                setNextLines(""+nHypothesisLine, ""+nVerificationLine);
-                setDoc();
+                element.detach();
 
+                setNextLines(""+nHypothesisLine, ""+nVerificationLine);
+                setOutput();
 
                 ArrayList<String> bytesFile = read();
-                bytesFile.remove(Integer.parseInt(hypothesisLine));
-                bytesFile.remove(Integer.parseInt(verificationLine)-1);
+                bytesFile.remove(Integer.parseInt(knowledge.getHypothesisLine()));
+                bytesFile.remove(Integer.parseInt(knowledge.getVerificationLine())-1);
                 write(bytesFile);
 
                 break;

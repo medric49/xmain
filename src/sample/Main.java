@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Knowledge;
 
 import java.util.ArrayList;
 
@@ -21,14 +22,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        /*String problem = "clavier";
-        String solution = "changer de clavier";
-
-        ArrayList<String> symptoms = new ArrayList<>();
-        symptoms.add("la machine s'eteint");
-        symptoms.add("la machine s'allume");
-
-        BrainProcessing.save(problem, solution, symptoms);
-        System.exit(0);*/
     }
 }
