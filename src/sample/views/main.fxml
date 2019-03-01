@@ -14,11 +14,16 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="main-container" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="73.0" layoutY="93.0" prefHeight="360.0" prefWidth="640.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="93.0">
+            <VBox layoutX="73.0" layoutY="93.0" prefHeight="360.0" prefWidth="640.0" spacing="70.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="93.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label styleClass="main-title" text="X-main" />
+                        <ImageView fitHeight="88.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/Asset%202.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="main-title" text=" X-main" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
@@ -32,7 +37,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton styleClass="diagnose" text="Diagnostiquer ">
+                        <JFXButton prefWidth="361.0" styleClass="diagnose" text="Diagnostiquer ">
                            <graphic>
                               <ImageView fitHeight="86.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

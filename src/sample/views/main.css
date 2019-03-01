@@ -23,12 +23,13 @@ Label{
 .add-problem{
     -fx-text-fill: #fff;
     -fx-font-size: 25px;
+    -fx-background-color:#435f71;
 }
 
 .diagnose{
     -fx-text-fill: #fff;
     -fx-font-size: 25px;
-    /*-fx-background-color:;*/
+    -fx-background-color:#435f71;
 }
 
 .footer{

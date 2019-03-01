@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="818.0" stylesheets="@discussion.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox maxHeight="69.0" prefHeight="69.0" prefWidth="818.0" styleClass="header" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="69.0" prefWidth="305.0">
+               <children>
+                  <Label layoutX="65.0" layoutY="20.0" styleClass="title" text="X-main" />
+                  <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/menu-button.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="624.0" prefWidth="235.0" styleClass="side-menu" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="58.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxWidth="600.0" prefHeight="555.0" prefWidth="467.0" styleClass="content-scroll" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox>
+                           <children>
+                              <HBox prefHeight="51.0" prefWidth="465.0">
+                                 <children>
+                                    <Label prefHeight="40.0" prefWidth="238.0" text="Wow ça a l'air bien">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-bot" />
+                                 </styleClass>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-user" />
+                                 </styleClass>
+                                 <children>
+                                    <Label prefHeight="46.0" prefWidth="217.0" text="En vrai" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-bot" />
+                                 </styleClass>
+                                 <children>
+                                    <Label prefHeight="30.0" prefWidth="186.0" text="On peut scroller ?" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-user" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="Ah, regardons voir; essayons de remplir " />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-bot" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="Vrai" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-user" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="Un message bête" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-bot" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="Un autre" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-user" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="Le scroll apparaît deja" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-user" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="C'est super" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-bot" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="yep" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-bot" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="pas mal" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="message-block" />
+                                    <String fx:value="messageblock-user" />
+                                 </styleClass>
+                                 <children>
+                                    <Label text="en vrai" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutX="37.0" layoutY="542.0" prefHeight="68.0" prefWidth="200.0" spacing="20.0" styleClass="answer-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <JFXTextField focusColor="#00aae4" prefHeight="25.0" prefWidth="286.0" promptText="Ecrivez votre réponse (oui ou non)" />
+                  <JFXButton styleClass="send" text="Envoyer" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
