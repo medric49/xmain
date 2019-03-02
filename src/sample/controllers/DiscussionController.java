@@ -35,7 +35,7 @@ public class DiscussionController implements Initializable {
     private VBox sidemenu;
     @FXML
     private ImageView toggleimg;
-    @FXML
+    @FXML 
     private JFXTextField answer;
     @FXML
     private VBox discussion;
