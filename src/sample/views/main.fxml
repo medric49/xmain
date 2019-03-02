@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="453.0" prefWidth="640.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="main-container" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="73.0" layoutY="93.0" prefHeight="360.0" prefWidth="640.0" spacing="70.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="93.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="88.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/Asset%202.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="main-title" text=" X-main" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <JFXButton onAction="#addproblem" styleClass="add-problem" text=" Ajouter un problème">
+                           <graphic>
+                              <ImageView fitHeight="86.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/gear.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#diagnose" prefWidth="361.0" styleClass="diagnose" text="Diagnostiquer ">
+                           <graphic>
+                              <ImageView fitHeight="86.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/heartbeat.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane maxHeight="89.0" prefHeight="80.0" prefWidth="800.0" styleClass="footer" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="186.0" layoutY="1.0" prefHeight="89.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Copyright © 2019 X-main tous droits réservés." />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

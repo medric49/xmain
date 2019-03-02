@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.controllers.MainController;
 import model.Knowledge;
 import org.jpl7.Atom;
 import org.jpl7.Query;
@@ -17,31 +18,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(sample.Main.class.getResource("views/main.fxml"));
+        Parent root = loader.load();
+        MainController controller = loader.getController();
+        primaryStage.setTitle("X-main");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        controller.setStage(primaryStage);
     }
 
     public static void main(String[] args) {
-        //launch(args);
-
-        /*
-        String problem = "clavier";
-        String solution = "changer de clavier";
-
-        ArrayList<String> symptoms = new ArrayList<>();
-        symptoms.add("la machine s'eteint");
-        symptoms.add("la machine s'allume");
-
-        Knowledge knowledge = BrainProcessing.save(problem, solution, symptoms);
-        knowledge.delete();
-        */
-
-        Query query = new Query("consult", new Term[]{new Atom("brain.pl")});
-        query.hasSolution();
-        Query query1 = new Query("go");
-        System.out.println(query1.hasSolution());
-        System.exit(0);
+        launch(args);
     }
 }
