@@ -5,3 +5,6 @@ out/
 nbproject/
 build/
 test/
+build.xml
+jdom-2.0.6.jar
+manifest.mf

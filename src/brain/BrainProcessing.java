@@ -18,7 +18,7 @@ public abstract class BrainProcessing {
     private static Document document;
     private static XMLOutputter xmlOutput=new XMLOutputter();
 
-    private static final String BRAIN_FILE = "brain.pl";
+    public static final String BRAIN_FILE = "brain.pl";
 
 
     private static final String NEXT_ID_TAG = "NextId";

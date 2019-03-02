@@ -1,18 +1,16 @@
 package sample;
 
-import brain.BrainProcessing;
+import brain.Engine;
+import java.util.Optional;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.controllers.MainController;
-import model.Knowledge;
-import org.jpl7.Atom;
-import org.jpl7.Query;
-import org.jpl7.Term;
-
-import java.util.ArrayList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 public class Main extends Application {
 
