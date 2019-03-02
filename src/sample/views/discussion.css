@@ -51,6 +51,10 @@ and open the template in the editor.
     -fx-padding: 10 20 10 10;
 }
 
+.toggle-side-menu{
+    -fx-background-color:#00AAE4;
+}
+
 ScrollPane{
     -fx-border-color:black;
     -fx-border-width: 0 0.2 0 0.2;

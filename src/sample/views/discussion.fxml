@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -19,19 +20,23 @@
          <children>
             <AnchorPane prefHeight="69.0" prefWidth="305.0">
                <children>
-                  <Label layoutX="65.0" layoutY="20.0" styleClass="title" text="X-main" />
-                  <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons/menu-button.png" />
-                     </image>
-                  </ImageView>
+                  <Label layoutX="71.0" layoutY="21.0" styleClass="title" text="X-main" />
+                  <Button fx:id="togglemenu" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#togglemenu" styleClass="toggle-side-menu">
+                     <graphic>
+                        <ImageView fx:id="toggleimg" fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/menu-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
       </HBox>
    </top>
    <left>
-      <VBox prefHeight="624.0" prefWidth="235.0" styleClass="side-menu" BorderPane.alignment="CENTER" />
+      <VBox fx:id="sidemenu" prefHeight="624.0" prefWidth="0.0" styleClass="side-menu" BorderPane.alignment="CENTER" />
    </left>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -40,7 +45,7 @@
                <children>
                   <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxWidth="600.0" prefHeight="555.0" prefWidth="467.0" styleClass="content-scroll" VBox.vgrow="ALWAYS">
                      <content>
-                        <VBox>
+                        <VBox fx:id="discussion">
                            <children>
                               <HBox prefHeight="51.0" prefWidth="465.0">
                                  <children>
@@ -91,69 +96,6 @@
                                     <Label text="Vrai" />
                                  </children>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-user" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="Un message bête" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-bot" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="Un autre" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-user" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="Le scroll apparaît deja" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-user" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="C'est super" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-bot" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="yep" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-bot" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="pas mal" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
-                                 <styleClass>
-                                    <String fx:value="message-block" />
-                                    <String fx:value="messageblock-user" />
-                                 </styleClass>
-                                 <children>
-                                    <Label text="en vrai" />
-                                 </children>
-                              </HBox>
                            </children>
                         </VBox>
                      </content>
@@ -162,7 +104,7 @@
             </VBox>
             <HBox alignment="CENTER" layoutX="37.0" layoutY="542.0" prefHeight="68.0" prefWidth="200.0" spacing="20.0" styleClass="answer-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <JFXTextField focusColor="#00aae4" prefHeight="25.0" prefWidth="286.0" promptText="Ecrivez votre réponse (oui ou non)" />
+                  <JFXTextField fx:id="answer" focusColor="#00aae4" prefHeight="25.0" prefWidth="286.0" promptText="Ecrivez votre réponse (oui ou non)" />
                   <JFXButton onAction="#send" styleClass="send" text="Envoyer" />
                </children>
             </HBox>
