@@ -7,6 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.Knowledge;
+import org.jpl7.Atom;
+import org.jpl7.Query;
+import org.jpl7.Term;
 
 import java.util.ArrayList;
 
@@ -22,6 +25,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         //launch(args);
+
+        /*
         String problem = "clavier";
         String solution = "changer de clavier";
 
@@ -30,8 +35,13 @@ public class Main extends Application {
         symptoms.add("la machine s'allume");
 
         Knowledge knowledge = BrainProcessing.save(problem, solution, symptoms);
-        System.out.println(knowledge.getHypothesisLine());
         knowledge.delete();
+        */
+
+        Query query = new Query("consult", new Term[]{new Atom("brain.pl")});
+        query.hasSolution();
+        Query query1 = new Query("go");
+        System.out.println(query1.hasSolution());
         System.exit(0);
     }
 }
