@@ -1,7 +1,7 @@
 go :- hypothesis(Probleme), sendSolution(Probleme), nl, undo.
 
-sendSolution(Solution): term_to_atom(Solution, S),
-		   jpl_call('brain.Engine', handleRep, [S], _),
+sendSolution(Solution) :- term_to_atom(Solution, S),
+		   jpl_call('brain.Engine', handleRep, [S], _).
 
 /*Hypothèses à tester */
 hypothesis("changer de chargeur") :- chargeur, !.
