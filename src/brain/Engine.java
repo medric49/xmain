@@ -31,6 +31,7 @@ public class Engine {
     private static String msg = "";
     private static String sol = "";
     private static DiscussionController controller;
+    public static boolean waiting = false;
     public Engine() {}
 
     public void setController(DiscussionController controller) {
@@ -56,7 +57,11 @@ public class Engine {
          */
         
         // ici tu appeles la methode respond de Engine pour envoyer la reponse a Prolog
-        controller.addquestion(question);
+        System.out.println(question);
+        while(waiting){
+            //on attend la réponse utilisateur;
+        }
+        
         
     }
 

@@ -22,6 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import sample.Daemon;
 
 /**
  * FXML Controller class
@@ -41,6 +42,7 @@ public class DiscussionController implements Initializable {
     private JFXTextField answer;
     @FXML
     private VBox discussion;
+    private Daemon daemon;
 
     public VBox getDiscussion() {
         return discussion;
@@ -55,6 +57,15 @@ public class DiscussionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        HBox messagebot = new HBox();
+        messagebot.getStyleClass().add("message-block");
+        messagebot.getStyleClass().add("messageblock-bot");
+        Label label = new Label("Bienvenu sur X-main.");
+        messagebot.getChildren().add(label);
+        discussion.getChildren().add(messagebot);
+        daemon = new Daemon("daemon");
+        daemon.start();
+        
     }    
 
     public void addquestion(String question){
