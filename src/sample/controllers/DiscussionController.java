@@ -15,8 +15,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
@@ -40,6 +42,10 @@ public class DiscussionController implements Initializable {
     @FXML
     private VBox discussion;
 
+    public VBox getDiscussion() {
+        return discussion;
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -51,6 +57,16 @@ public class DiscussionController implements Initializable {
         // TODO
     }    
 
+    public void addquestion(String question){
+        HBox messagebot = new HBox();
+        messagebot.getStyleClass().add("message-block");
+        messagebot.getStyleClass().add("messageblock-bot");
+        Label label = new Label(question);
+        messagebot.getChildren().add(label);
+        discussion.getChildren().add(messagebot);
+    
+    }
+    
     @FXML
     private void send(ActionEvent event) {
         String answer = this.answer.getText();

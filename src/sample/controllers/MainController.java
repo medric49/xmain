@@ -48,6 +48,9 @@ public class MainController implements Initializable {
         this.stage.setScene(new Scene(root));
         this.stage.show();
         controller.setStage(this.stage);
+        Engine engine = new Engine();
+        engine.setController(controller);
+        engine.start();
     }
     
     @FXML

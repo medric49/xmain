@@ -10,11 +10,15 @@ import java.io.ByteArrayInputStream;
 import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javax.swing.JOptionPane;
 import org.jpl7.Query;
 import org.jpl7.Term;
 import org.jpl7.fli.Prolog;
 import org.jpl7.fli.term_t;
+import sample.controllers.DiscussionController;
 
 /**
  *
@@ -26,8 +30,12 @@ public class Engine {
     
     private static String msg = "";
     private static String sol = "";
-    
+    private static DiscussionController controller;
     public Engine() {}
+
+    public void setController(DiscussionController controller) {
+        this.controller = controller;
+    }
     
     public void start() {
 
@@ -48,19 +56,8 @@ public class Engine {
          */
         
         // ici tu appeles la methode respond de Engine pour envoyer la reponse a Prolog
+        controller.addquestion(question);
         
-        
-        // Exemple:
-        System.out.println("==> "+question);
-        Alert a = new Alert(Alert.AlertType.CONFIRMATION, question, ButtonType.YES, ButtonType.NO);
-        a.setTitle("Fuck");
-        Optional<ButtonType> result = a.showAndWait();
-
-        if (result.get() == ButtonType.YES) {
-            Engine.respond("oui");
-        } else {
-            Engine.respond("non");
-        }
     }
 
     public static void handleRep(String rep){
