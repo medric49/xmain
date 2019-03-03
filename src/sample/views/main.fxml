@@ -36,7 +36,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton onAction="#diagnose" prefWidth="361.0" styleClass="diagnose" text="Diagnostiquer ">
+                        <JFXButton fx:id="txt" onAction="#diagnose" prefWidth="361.0" styleClass="diagnose" text="Diagnostiquer ">
                            <graphic>
                               <ImageView fitHeight="86.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
