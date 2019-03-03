@@ -15,6 +15,8 @@ import org.jpl7.Query;
 import org.jpl7.Term;
 import org.jpl7.fli.Prolog;
 import org.jpl7.fli.term_t;
+import sample.controllers.DiscussionController;
+import sample.controllers.MainController;
 
 /**
  *
@@ -26,10 +28,8 @@ public class Engine {
     
     private static String msg = "";
     private static String sol = "";
-    
-    public Engine() {}
-    
-    public void start() {
+
+    public static void start() {
 
         String s = "consult('"+BrainProcessing.BRAIN_FILE+"')";
         Query q1 = new Query(s);
