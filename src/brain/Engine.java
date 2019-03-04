@@ -93,6 +93,7 @@ public class Engine {
         if(!Engine.cancel){
             rep = rep.substring(1, rep.length()-1);
             controller.addquestion(" Il faut "+rep+" ");
+            Engine.cancel = false;
         } else {
             controller.addquestion(" Opération annulée par l'utilisateur ");
         }
