@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="818.0" stylesheets="@discussion.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.DiscussionController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="746.0" prefWidth="818.0" stylesheets="@discussion.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.DiscussionController">
 
 
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="58.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="TOP_CENTER" layoutX="58.0" prefHeight="559.0" prefWidth="477.0" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxWidth="600.0" prefHeight="555.0" prefWidth="467.0" styleClass="content-scroll" VBox.vgrow="ALWAYS">
+                  <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxWidth="600.0" prefHeight="555.0" prefWidth="467.0" styleClass="content-scroll" VBox.vgrow="ALWAYS">
                      <content>
 
                         <VBox fx:id="discussion" styleClass="discussion" />
@@ -26,7 +26,7 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <HBox alignment="CENTER" layoutX="37.0" layoutY="542.0" prefHeight="68.0" prefWidth="200.0" spacing="20.0" styleClass="answer-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <HBox alignment="CENTER" layoutX="37.0" layoutY="542.0" prefHeight="119.0" prefWidth="593.0" spacing="20.0" styleClass="answer-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <JFXTextField fx:id="answer" focusColor="#00aae4" prefHeight="25.0" prefWidth="286.0" promptText="Ecrivez votre réponse (oui ou non)" visible="false" />
                   <JFXButton onAction="#send" styleClass="send" text="Envoyer" visible="false" />
