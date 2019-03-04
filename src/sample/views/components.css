@@ -1,0 +1,37 @@
+.knowledge-item-container {
+    -fx-background-radius: 5px !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.51), 10, 0, 0, 0) !important;
+    -fx-background-color: #00AAE4 !important;
+    -fx-text-fill: white !important;
+}
+
+.button-special {
+    -fx-padding: 5px 20px 5px 20px;
+    -fx-border-color: #00AAE4;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: #00AAE4;
+}
+
+.button-red {
+    -fx-padding: 5px 20px 5px 20px;
+    -fx-border-color: #bf1000;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: #bf1000;
+}
+
+.text-blue {
+    -fx-text-fill: #00AAE4;
+}
+.bg-white {
+    -fx-background-color: white;
+}
+
+.knowledge-detail-container {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.51), 10, 0, 0, 0);
+}

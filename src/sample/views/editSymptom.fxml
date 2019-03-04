@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.components.EditSymptomController">
+   <children>
+      <JFXTextField fx:id="edit" focusColor="#00aae4" prefHeight="25.0" prefWidth="559.0" />
+      <JFXButton fx:id="supp" buttonType="RAISED" prefHeight="32.0" prefWidth="0.0" text=" ">
+          <graphic>
+              <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@icons/times.png" />
+                  </image>
+              </ImageView>
+          </graphic>
+      </JFXButton>
+   </children>
+</HBox>

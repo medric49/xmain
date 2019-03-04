@@ -7,11 +7,12 @@ package sample.controllers;
 
 import brain.Engine;
 import com.jfoenix.controls.JFXTextField;
+
 import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,10 +21,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -38,7 +38,7 @@ public class DiscussionController implements Initializable {
 
     private Stage stage;
     @FXML
-    private Button togglemenu;
+    private ImageView returnToMain;
     @FXML
     private VBox sidemenu;
     @FXML
@@ -114,30 +114,14 @@ public class DiscussionController implements Initializable {
     }
 
     @FXML
-    private void togglemenu(ActionEvent event) {
-        double length = this.sidemenu.getWidth();
-        if(length == 0){
-            this.sidemenu.setStyle("-fx-pref-width: 235;");
-            this.toggleimg.setImage(new Image(sample.Main.class.getResource("views/icons/close.png").toExternalForm()));
-            
-        }
-        else{
-            this.sidemenu.setStyle("-fx-pref-width: 0;");
-            this.toggleimg.setImage(new Image(sample.Main.class.getResource("views/icons/menu-button.png").toExternalForm()));
-        }
-        
-    }
-    
-    public void setMain() throws IOException{
-        this.stage.hide();
+    private void backtohome(MouseEvent event) throws IOException {
+        this.stage.close();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(sample.Main.class.getResource("views/main.fxml"));
         Parent root = loader.load();
         MainController controller = loader.getController();
-        this.stage.setTitle("X-main");
         this.stage.setScene(new Scene(root));
         this.stage.show();
         controller.setStage(this.stage);
     }
-    
 }
