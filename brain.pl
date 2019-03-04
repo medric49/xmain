@@ -14,7 +14,7 @@ hypothesis("changer l'écran") :- ecran, !.
 hypothesis("réchauffer la carte graphique, la changer si le problème persiste") :- cartegraphique, !.
 hypothesis("refaire le système d'exploitation, si le problème persiste changer de disque dur") :- disquedur, !.
 hypothesis("placer correctement le disque dur") :- disquedurmalplace, !.
-hypothesis("qsdqzdqzd") :- souris, !.
+hypothesis("bien placer les barrettes RAM, les changer une à une si le problème persiste") :- ram, !.
 hypothesis("nettoyer les barrettes RAM, les changer si le problème persiste") :- ram2, !.
 hypothesis("vérifier la nappe de connexion du clavier, ou alors utiliser un clavier externe") :- clavier, !.
 hypothesis(".....nous ne parvenons pas à détecter votre problème"). /*Pas de diagnostic*/
@@ -28,10 +28,10 @@ ecran :- verify("s'allume"), not(verify("s'arrête juste après")), verify("a l'
 ram :- verify("s'allume"), verify("émet 1 bip long suivi d'1 bip court ou alors des bips longs uniquement").
 cartegraphique:- (verify("s'allume"), verify("a l'écran tout noir ou qui présente des taches"), not(verify("donne des images sur un moniteur externe")), not(verify("donne des images claires après avoir nettoyé ou changer les RAM"))) ; (verify("s'allume") , verify("émet 1 bip long suivi de 2 bips courts")).
 ram2 :- verify("s'allume"), verify("a l'écran tout noir ou qui présente des taches"), not(verify("donne des images sur un moniteur externe")), verify("donne des images claires après avoir nettoyé ou changer les RAM").
+disquedur :- verify("s'allume"), not(verify("finit le chargement du système d'exploitation(ne tourne pas indéfiniment)")).
 disquedurmalplace :- verify("s'allume"), verify("affiche le message d'erreur boot device not found").
-clavier :- verify("QAZAZ?").
-souris :- verify("sdqsd").
-azaz :- verify("sdsdq").
+clavier :- verify("s'allume"), not(verify("affiche les touches que nous saisissons au clavier")).
+alimentation :- not(verify("s'allume")), not(verify("s'allume après avoir bien connecté le bouton d'allumage ou après l'avoir changé")).
 boutondallumage :- not(verify("s'allume")).
 
 /*Comment poser les questions*/
