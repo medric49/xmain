@@ -35,14 +35,23 @@ alimentation :- not(verify("s'allume")), not(verify("s'allume après avoir bien 
 boutondallumage :- not(verify("s'allume")).
 
 /*Comment poser les questions*/
-ask(Question) :- term_to_atom(Question, Q),
+ask1(Question) :- term_to_atom(Question, Q),
 		   jpl_call('brain.Engine', handle, [Q], _),
            jpl_get('java.lang.System', 'in', In),
-           jpl_get('java.lang.System', 'out', Out),
            jpl_new('java.util.Scanner', [In], Sc),
            jpl_call(Sc, next, [], K),
            (  (K==oui ; K==y)
              ->  assert(oui(Question));
+             assert(non(Question)), fail).
+			 
+ask(Question) :- term_to_atom(Question, Q),
+		   jpl_call('brain.Engine', handle, [Q], _),
+           jpl_get('java.lang.System', 'in', In),
+           jpl_call('brain.Engine', readT, [], K),
+           (  (K==oui ; K==o)
+             ->  assert(oui(Question));
+			 (K==cancel)
+             ->  assert(non(_));
              assert(non(Question)), fail).
 
 :- dynamic oui/1, non/1.

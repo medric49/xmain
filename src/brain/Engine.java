@@ -5,19 +5,17 @@
  */
 package brain;
 
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Optional;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javax.swing.JOptionPane;
+import javafx.stage.StageStyle;
 import org.jpl7.Query;
-import org.jpl7.Term;
-import org.jpl7.fli.Prolog;
-import org.jpl7.fli.term_t;
 import sample.controllers.DiscussionController;
 
 /**
@@ -38,16 +36,17 @@ public class Engine {
         this.controller = controller;
     }
     
-    public void start() {
+    public synchronized void start() throws IOException {
 
         String s = "consult('"+BrainProcessing.BRAIN_FILE+"')";
         Query q1 = new Query(s);
         q1.hasSolution();
 
         Query q2 = new Query("go.");
-        q2.oneSolution();
+        q2.hasSolution();
+        
     }    
-    public static void handle(String question){
+    public static void handle(String question) throws UnsupportedEncodingException{
         /*  
          * 
          * 
@@ -57,22 +56,46 @@ public class Engine {
          */
         
         // ici tu appeles la methode respond de Engine pour envoyer la reponse a Prolog
-        System.out.println(question);
-        while(waiting){
-            //on attend la réponse utilisateur;
+        question = question.substring(1, question.length()-1);
+        question = " Est-ce que la machine "+question+" ?  ";
+        
+        System.out.println("> "+question);
+        controller.addquestion(question);
+        ButtonType menu = new ButtonType("Interrompre");
+        Alert a = new Alert(Alert.AlertType.NONE, null, ButtonType.YES, ButtonType.NO, menu);
+        
+        double x = controller.getStage().getX();
+        double y = controller.getStage().getY();
+        double w = controller.getStage().getWidth();
+        double h = controller.getStage().getHeight();
+        
+        a.initStyle(StageStyle.TRANSPARENT);
+        
+        a.getDialogPane().setPrefSize(0, 0);
+        a.setX(x+w/2);
+        a.setY(y+h-110);
+        
+        Optional<ButtonType> result = a.showAndWait();
+        
+        if(result.get() == ButtonType.YES){
+            Engine.respond("oui");
+            controller.addreponse("oui");
+        } else if(result.get() == ButtonType.NO) {
+            Engine.respond("non");
+            controller.addreponse("non");
+        } else if(result.get() == menu){
+            Engine.respond("cancel");
+            Engine.cancel = true;
         }
-        
-        
     }
 
     public static void handleRep(String rep){
-        sol = rep;
-        /**
-         * 
-         * 
-         * Ici tu ecris ce qui se passe quand on trouve la solution
-         * 
-         */
+        if(!Engine.cancel){
+            rep = rep.substring(1, rep.length()-1);
+            controller.addquestion(" Il faut "+rep+" ");
+        } else {
+            controller.addquestion(" Opération annulée par l'utilisateur ");
+        }
     }
     
     public String getSolution(){
@@ -82,13 +105,15 @@ public class Engine {
     public String nextQuestion(){
         return "La machine "+msg+" ?";
     }
+    public static boolean cancel=false;
+    public static String res = "";
+    
+    public static String readT() throws InterruptedException{
+        Scanner s = new Scanner(System.in);
+        return s.next();
+    }
     
     public static void respond(String rep){
         System.setIn(new ByteArrayInputStream(rep.getBytes()));
-    }
-    
-    public void close() {
-        Query q2 = new Query("halt");
-        q2.oneSolution();
     }
 }

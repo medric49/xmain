@@ -7,11 +7,17 @@ package sample.controllers;
 
 import brain.Engine;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -21,7 +27,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 import sample.Daemon;
 
 /**
@@ -51,6 +56,10 @@ public class DiscussionController implements Initializable {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+    
+    public Stage getStage(){
+        return this.stage;
+    }
     /**
      * Initializes the controller class.
      */
@@ -63,9 +72,11 @@ public class DiscussionController implements Initializable {
         Label label = new Label("Bienvenu sur X-main.");
         messagebot.getChildren().add(label);
         discussion.getChildren().add(messagebot);
-        daemon = new Daemon("daemon");
-        daemon.start();
         
+        daemon = new Daemon("daemon");
+        daemon.setController(this);
+        Platform.runLater(daemon);
+//        daemon.start();
     }    
 
     public void addquestion(String question){
@@ -75,7 +86,15 @@ public class DiscussionController implements Initializable {
         Label label = new Label(question);
         messagebot.getChildren().add(label);
         discussion.getChildren().add(messagebot);
+    }
     
+    public void addreponse(String rep){
+        HBox messagebot = new HBox();
+        messagebot.getStyleClass().add("message-block");
+        messagebot.getStyleClass().add("messageblock-user");
+        Label label = new Label(rep);
+        messagebot.getChildren().add(label);
+        discussion.getChildren().add(messagebot);
     }
     
     @FXML
@@ -83,6 +102,7 @@ public class DiscussionController implements Initializable {
         String answer = this.answer.getText();
         if(answer.toLowerCase().equals("oui") || answer.toLowerCase().equals("non")){
             //logique manquante
+            Engine.handleRep(answer.toLowerCase());
         }else{
             this.answer.setText("");
             Alert alert = new Alert(AlertType.INFORMATION);
@@ -106,6 +126,18 @@ public class DiscussionController implements Initializable {
             this.toggleimg.setImage(new Image(sample.Main.class.getResource("views/icons/menu-button.png").toExternalForm()));
         }
         
+    }
+    
+    public void setMain() throws IOException{
+        this.stage.hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(sample.Main.class.getResource("views/main.fxml"));
+        Parent root = loader.load();
+        MainController controller = loader.getController();
+        this.stage.setTitle("X-main");
+        this.stage.setScene(new Scene(root));
+        this.stage.show();
+        controller.setStage(this.stage);
     }
     
 }

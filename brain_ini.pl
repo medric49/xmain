@@ -35,7 +35,9 @@ boutondallumage :- not(verify("s'allume")).
 ask(Question) :- write('Est-ce que la machine '), write(Question),
     write('?'), read(Response), nl,
     (   (Response==yes ; Response==y)
-    ->  assert(yes(Question));
+     ->  assert(yes(Question));
+	(Response==exit ; Response==ex)
+     ->  assert(no(_));
     assert(no(Question)), fail).
 :- dynamic yes/1, no/1.
 
