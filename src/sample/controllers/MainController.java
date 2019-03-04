@@ -6,8 +6,9 @@
 package sample.controllers;
 
 import brain.Engine;
+
+import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +16,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 /**
  *
@@ -40,7 +39,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void diagnose(ActionEvent event) throws Exception {
-        this.stage.hide();
+        this.stage.close();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(sample.Main.class.getResource("views/discussion.fxml"));
         Parent root = loader.load();
@@ -51,8 +50,15 @@ public class MainController implements Initializable {
     }
     
     @FXML
-    private void addproblem(ActionEvent event){
-        
+    private void addproblem(ActionEvent event) throws IOException {
+        this.stage.close();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(sample.Main.class.getResource("views/form.fxml"));
+        Parent root = loader.load();
+        FormController controller = loader.getController();
+        this.stage.setScene(new Scene(root));
+        this.stage.show();
+        controller.setStage(this.stage);
     }
     
 }

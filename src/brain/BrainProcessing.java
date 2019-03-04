@@ -40,8 +40,10 @@ public abstract class BrainProcessing {
 
     // ========================= Public method =================================
     public static Knowledge save(String problem, String solution, ArrayList<String> symptoms) {
-        String hypothesisBuf = TextFomat.createHypothesis(problem, solution);
-        String verificationBuf = TextFomat.createVerification(problem, symptoms);
+        String problemR = problem.replace(' ','_').toLowerCase();
+
+        String hypothesisBuf = TextFomat.createHypothesis(problemR, solution);
+        String verificationBuf = TextFomat.createVerification(problemR, symptoms);
 
 
         ArrayList<String> bytesFile = read();
@@ -79,7 +81,7 @@ public abstract class BrainProcessing {
             ArrayList<String> symptoms = new ArrayList<>();
 
             for ( int j = 0; j< symptomsElements.size(); j++) {
-                symptoms.add( symptomsElements.get(i).getText() );
+                symptoms.add( symptomsElements.get(j).getText() );
             }
             knowledges.add(new Knowledge(id, hypothesisLine, verificationLine, problem, solution, symptoms));
         }

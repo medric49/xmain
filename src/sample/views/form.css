@@ -1,0 +1,31 @@
+BorderPane {
+    -fx-background-color: white;
+}
+
+.header{
+    -fx-background-color: #00AAE4;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.61), 10, 0, 0, 0);
+}
+
+.side-menu{
+    -fx-padding: 10px;
+    -fx-text-fill: #fff;
+    -fx-background-color: #435f71;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.61), 10, 0, 0, 0);
+}
+
+.button-add {
+    -fx-border-color: #00AAE4;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: white;
+}
+
+ScrollPane {
+    -fx-background-color: rgba(255, 255, 255, 0);
+}
+
+.knowledge-container {
+    -fx-background-color: #435f71;
+}
