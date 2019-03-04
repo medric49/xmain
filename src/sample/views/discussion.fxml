@@ -21,7 +21,7 @@
                   <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxWidth="600.0" prefHeight="555.0" prefWidth="467.0" styleClass="content-scroll" VBox.vgrow="ALWAYS">
                      <content>
 
-                        <VBox fx:id="discussion" prefHeight="536.0" prefWidth="475.0" />
+                        <VBox fx:id="discussion" styleClass="discussion" />
                      </content>
                   </ScrollPane>
                </children>

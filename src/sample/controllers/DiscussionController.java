@@ -73,11 +73,17 @@ public class DiscussionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         HBox messagebot = new HBox();
+        HBox messagebot2 = new HBox();
         messagebot.getStyleClass().add("message-block");
         messagebot.getStyleClass().add("messageblock-bot");
+        messagebot2.getStyleClass().add("message-block");
+        messagebot2.getStyleClass().add("messageblock-bot");
         Label label = new Label("Bienvenu sur X-main.");
+        Label hello = new Label("Grâce moi vous pouvez trouver ce qui ne va pas\navec votre ordinateur!");
         messagebot.getChildren().add(label);
+        messagebot2.getChildren().add(hello);
         discussion.getChildren().add(messagebot);
+        discussion.getChildren().add(messagebot2);
         
         daemon = new Daemon("daemon");
         daemon.setController(this);
@@ -90,7 +96,20 @@ public class DiscussionController implements Initializable {
         HBox messagebot = new HBox();
         messagebot.getStyleClass().add("message-block");
         messagebot.getStyleClass().add("messageblock-bot");
-        Label label = new Label(question);
+        String [] words = question.split(" ");
+        String msg="";
+        for(int i=0; i!=words.length;i++){
+            if(i%9 == 0 && i!=0){
+                msg+="\n";
+                msg+=words[i];
+                msg+=" ";
+            }
+            else{
+                msg+=words[i];
+                msg+=" ";
+            }
+        }
+        Label label = new Label(msg);
         messagebot.getChildren().add(label);
         discussion.getChildren().add(messagebot);
     }
