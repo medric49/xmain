@@ -59,25 +59,32 @@ and open the template in the editor.
 
 ScrollPane{
     -fx-border-color:black;
-    -fx-border-width: 0;
+    -fx-border-width: 0 0.2 0 0.2;
 
 }
 
 .messageblock-bot Label{
     -fx-text-fill:#fff;
-    -fx-background-color:#87CEFA;
-    -fx-padding : 0 0 0 10;
+    -fx-background-color:#00AAE4;
+    -fx-padding : 10 10 10 10;
     -fx-background-radius: 8 8 8 8; 
     -fx-min-width: 186;
-    -fx-min-height: 30;
+    -fx-min-height: 40;
 }
 
 .messageblock-user Label{
-    -fx-background-color:#D3D3D3;
-    -fx-padding : 0 0 0 10;
+    -fx-background-color:#435f71;
+    -fx-padding : 10 10 10 10;
     -fx-background-radius: 8 8 8 8;
+    -fx-text-fill: #fff;
     -fx-min-width: 186;
-    -fx-min-height: 30;
+    -fx-min-height: 40;
+}
+
+.discussion{
+    -fx-background-image: url('icons/images.jpg');
+    -fx-background-size: 100% 100%;
+    /*-fx-background-color:red;*/
 }
 
 /*.scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {
