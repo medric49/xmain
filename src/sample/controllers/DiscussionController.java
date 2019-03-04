@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -48,6 +51,9 @@ public class DiscussionController implements Initializable {
     @FXML
     private VBox discussion;
     private Daemon daemon;
+    
+    @FXML
+    private ScrollPane scroll;
 
     public VBox getDiscussion() {
         return discussion;
@@ -77,6 +83,7 @@ public class DiscussionController implements Initializable {
         daemon.setController(this);
         Platform.runLater(daemon);
 //        daemon.start();
+        scroll.vvalueProperty().bind(discussion.heightProperty());
     }    
 
     public void addquestion(String question){
