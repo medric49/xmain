@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -36,14 +37,22 @@
       </AnchorPane>
    </center>
    <left>
-      <VBox fx:id="sidemenu" prefHeight="624.0" prefWidth="225.0" styleClass="side-menu" BorderPane.alignment="CENTER" />
+      <VBox fx:id="sidemenu" prefHeight="624.0" prefWidth="225.0" spacing="15.0" styleClass="side-menu" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="20.0" top="30.0" />
+         </padding>
+         <children>
+            <JFXButton onAction="#backtohome" styleClass="button-settings" text="Aller à l'acceuil" />
+            <JFXButton onAction="#reset" styleClass="button-settings" text="Nouveau diagnostique" />
+            <JFXButton onAction="#gotosettings" styleClass="button-settings" text="Ajouter une connaissance" />
+         </children></VBox>
    </left>
    <top>
       <HBox maxHeight="69.0" prefHeight="69.0" prefWidth="818.0" styleClass="header" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="69.0" prefWidth="305.0">
                <children>
-                  <ImageView fitHeight="52.0" fitWidth="81.0" layoutX="14.0" layoutY="10.0" onMouseClicked="#backtohome" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="52.0" fitWidth="81.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons/Asset%202.png" />
                      </image>

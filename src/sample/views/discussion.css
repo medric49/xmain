@@ -89,6 +89,15 @@ ScrollPane{
     -fx-background-color:#435f71;
 }
 
+.button-settings {
+    -fx-border-color: #00AAE4;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: white;
+    -fx-pref-width: 156;
+}
+
 /*.scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {
     -fx-background-color: #F1F1F1;
     -fx-background-insets: 0.0;
