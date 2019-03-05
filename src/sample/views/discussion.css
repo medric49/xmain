@@ -70,21 +70,32 @@ ScrollPane{
     -fx-background-radius: 8 8 8 8; 
     -fx-min-width: 186;
     -fx-min-height: 40;
+    -fx-font-size: 14;
 }
 
 .messageblock-user Label{
-    -fx-background-color:#435f71;
+    -fx-background-color:#fff;
     -fx-padding : 10 10 10 10;
     -fx-background-radius: 8 8 8 8;
-    -fx-text-fill: #fff;
+    -fx-text-fill: black;
     -fx-min-width: 186;
-    -fx-min-height: 40;
+    -fx-min-height: 40; 
+    -fx-font-size: 14;
 }
 
 .discussion{
-    -fx-background-image: url('icons/images.jpg');
-    -fx-background-size: 100% 100%;
-    /*-fx-background-color:red;*/
+    /*-fx-background-image: url('icons/images.jpg');*/
+    /*-fx-background-size: 100% 100%;*/
+    -fx-background-color:#435f71;
+}
+
+.button-settings {
+    -fx-border-color: #00AAE4;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: white;
+    -fx-pref-width: 156;
 }
 
 /*.scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {

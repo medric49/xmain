@@ -97,6 +97,7 @@ public class DiscussionController implements Initializable {
         messagebot.getStyleClass().add("message-block");
         messagebot.getStyleClass().add("messageblock-bot");
         String [] words = question.split(" ");
+        int nbline = words.length%9;
         String msg="";
         for(int i=0; i!=words.length;i++){
             if(i%9 == 0 && i!=0){
@@ -111,6 +112,9 @@ public class DiscussionController implements Initializable {
         }
         Label label = new Label(msg);
         messagebot.getChildren().add(label);
+        if(discussion.getChildren().size()>9){
+            discussion.setMinHeight(discussion.getHeight() + 30*nbline);
+        }
         discussion.getChildren().add(messagebot);
     }
     
@@ -139,8 +143,9 @@ public class DiscussionController implements Initializable {
         }
     }
 
+    
     @FXML
-    private void backtohome(MouseEvent event) throws IOException {
+    private void backtohome(ActionEvent event) throws IOException {
         this.stage.close();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(sample.Main.class.getResource("views/main.fxml"));
@@ -149,5 +154,36 @@ public class DiscussionController implements Initializable {
         this.stage.setScene(new Scene(root));
         this.stage.show();
         controller.setStage(this.stage);
+    }
+    
+    @FXML
+    private void gotosettings(ActionEvent event) throws IOException {
+        this.stage.close();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(sample.Main.class.getResource("views/form.fxml"));
+        Parent root = loader.load();
+        FormController controller = loader.getController();
+        this.stage.setScene(new Scene(root));
+        this.stage.show();
+        controller.setStage(this.stage);
+    }
+    
+    @FXML
+    private void reset(ActionEvent event){
+        discussion.setMaxHeight(557);
+        discussion.getChildren().clear();
+        HBox messagebot = new HBox();
+        HBox messagebot2 = new HBox();
+        messagebot.getStyleClass().add("message-block");
+        messagebot.getStyleClass().add("messageblock-bot");
+        messagebot2.getStyleClass().add("message-block");
+        messagebot2.getStyleClass().add("messageblock-bot");
+        Label label = new Label("Bienvenu sur X-main.");
+        Label hello = new Label("Grâce moi vous pouvez trouver ce qui ne va pas\navec votre ordinateur!");
+        messagebot.getChildren().add(label);
+        messagebot2.getChildren().add(hello);
+        discussion.getChildren().add(messagebot);
+        discussion.getChildren().add(messagebot2);
+        Platform.runLater(daemon);
     }
 }
