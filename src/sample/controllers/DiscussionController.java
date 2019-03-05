@@ -97,6 +97,7 @@ public class DiscussionController implements Initializable {
         messagebot.getStyleClass().add("message-block");
         messagebot.getStyleClass().add("messageblock-bot");
         String [] words = question.split(" ");
+        int nbline = words.length%9;
         String msg="";
         for(int i=0; i!=words.length;i++){
             if(i%9 == 0 && i!=0){
@@ -111,6 +112,10 @@ public class DiscussionController implements Initializable {
         }
         Label label = new Label(msg);
         messagebot.getChildren().add(label);
+        if(discussion.getChildren().size()>9){
+            discussion.setMinHeight(discussion.getHeight() + 30*nbline);
+            System.out.println("new "+discussion.getHeight());
+        }
         discussion.getChildren().add(messagebot);
     }
     
