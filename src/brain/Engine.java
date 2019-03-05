@@ -95,7 +95,7 @@ public class Engine {
             controller.addquestion(" Il faut "+rep+" ");
             Engine.cancel = false;
         } else {
-            controller.addquestion(" Opération annulée par l'utilisateur ");
+            controller.addquestion(" Bye Bye !");
         }
     }
     
