@@ -184,6 +184,7 @@ public class DiscussionController implements Initializable {
         messagebot2.getChildren().add(hello);
         discussion.getChildren().add(messagebot);
         discussion.getChildren().add(messagebot2);
+        Engine.cancel = false;
         Platform.runLater(daemon);
     }
 }

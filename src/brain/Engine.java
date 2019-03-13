@@ -29,7 +29,7 @@ public class Engine {
     private static String msg = "";
     private static String sol = "";
     private static DiscussionController controller;
-    public static boolean waiting = false;
+    
     public Engine() {}
 
     public void setController(DiscussionController controller) {
@@ -38,7 +38,7 @@ public class Engine {
     
     public synchronized void start() throws IOException {
 
-        String s = "consult('"+BrainProcessing.BRAIN_FILE+"')";
+        String s = "load_files('"+BrainProcessing.BRAIN_FILE+"', [encoding(utf8)])";
         Query q1 = new Query(s);
         q1.hasSolution();
 
@@ -46,6 +46,7 @@ public class Engine {
         q2.hasSolution();
         
     }    
+    
     public static void handle(String question) throws UnsupportedEncodingException{
         /*  
          * 
@@ -92,7 +93,7 @@ public class Engine {
     public static void handleRep(String rep){
         if(!Engine.cancel){
             rep = rep.substring(1, rep.length()-1);
-            controller.addquestion(" Il faut "+rep+" ");
+            controller.addquestion(" Il faut "+rep+". ");
             Engine.cancel = false;
         } else {
             controller.addquestion(" Opération annulée par l'utilisateur ");

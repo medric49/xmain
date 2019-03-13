@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root>
-    <NextId>3</NextId>
-    <NextHypothesisLine>17</NextHypothesisLine>
-    <NextVerificationLine>35</NextVerificationLine>
+    <NextId>4</NextId>
+    <NextHypothesisLine>18</NextHypothesisLine>
+    <NextVerificationLine>37</NextVerificationLine>
 
 
-<Knowledge id="2"><HypothesisLine>16</HypothesisLine><VerificationLine>33</VerificationLine><Problem>Logiciel</Problem><Solution>Re-installer le logiciel</Solution><Symptom>Est-ce que la RAM est pleine ?</Symptom><Symptom>Est-ce que tu as fait</Symptom></Knowledge></Root>
+<Knowledge id="2"><HypothesisLine>16</HypothesisLine><VerificationLine>33</VerificationLine><Problem>Logiciel</Problem><Solution>Re-installer le logiciel</Solution><Symptom>Est-ce que la RAM est pleine ?</Symptom><Symptom>Est-ce que tu as fait</Symptom></Knowledge><Knowledge id="3"><HypothesisLine>17</HypothesisLine><VerificationLine>35</VerificationLine><Problem>Logiciel</Problem><Solution>Restaurer le systeme</Solution><Symptom>Est-ce que la machine bug ?</Symptom><Symptom>Est-ce que la machine est lente</Symptom></Knowledge></Root>
