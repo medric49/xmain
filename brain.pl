@@ -20,6 +20,7 @@ hypothesis("nettoyer les barrettes RAM, les changer si le problème persiste") :
 hypothesis("vérifier la nappe de connexion du clavier, ou alors utiliser un clavier externe") :- clavier, !.
 hypothesis(".....nous ne parvenons pas à détecter votre problème"). /*Pas de diagnostic*/
 
+
 /*Règles de dépannage*/
 ventilateur :- verify("s'allume"), verify("s'arrête juste après").
 chargeur :- not(verify("s'allume")), verify("s'allume après avoir changé de chargeur").
