@@ -166,6 +166,7 @@ public class DiscussionController implements Initializable {
         this.stage.setScene(new Scene(root));
         this.stage.show();
         controller.setStage(this.stage);
+        Engine.cancel = false;
     }
     
     @FXML
